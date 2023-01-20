@@ -34,8 +34,9 @@ class HegaldiaController extends Controller
      * @param  \App\Models\Hegaldia  $hegaldia
      * @return \Illuminate\Http\Response
      */
-    public function show(Hegaldia $hegaldia)
+    public function show($id)
     {
+        $hegaldia = Hegaldia::find($id);
         return $hegaldia;
     }
 
@@ -76,8 +77,9 @@ class HegaldiaController extends Controller
      * @param  \App\Models\Hegaldia  $hegaldia
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hegaldia $hegaldia)
+    public function destroy($id)
     {
+        $hegaldia = Hegaldia::find($id);
         $hegaldia->delete();
     }
 }
